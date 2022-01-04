@@ -1,129 +1,64 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+lista_brojeva = input().split(',')
+lista_brojeva=list(map(lambda x: int(x) ,lista_brojeva))
 
-# C extensions
-*.so
+lis = lista_brojeva[:]
+lis.sort()
+srecni_brojevi = []
+nesrecni_brojevi = []
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+def provera(x):
+    lista1 = [int(x)]
+    lista2 = [int(x)]
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+    while len(lista2) == len(lista1):
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+        s = 0
+        for cifra in str(x):
+            s += int(cifra) ** 2
+        lista1.append(s)
 
-# Translations
-*.mo
-*.pot
+        lista2 = list((set(lista1)))
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+        x = str(s)
+    if lista1[-1] == 1:
+        srecni_brojevi.append((lista1[0]))
 
-# Flask stuff:
-instance/
-.webassets-cache
+    else:
+        nesrecni_brojevi.append(lista1[0])
+        for i in range(len(lista1)):
+            print(end='')
+            #print(lista1[i],end="")
+def ispis(x):
+    lista1 = [int(x)]
+    lista2 = [int(x)]
 
-# Scrapy stuff:
-.scrapy
+    while len(lista2) == len(lista1):
 
-# Sphinx documentation
-docs/_build/
 
-# PyBuilder
-target/
+        s = 0
+        for cifra in str(x):
+            s += int(cifra) ** 2
+        lista1.append(s)
 
-# Jupyter Notebook
-.ipynb_checkpoints
+        lista2 = list((set(lista1)))
 
-# IPython
-profile_default/
-ipython_config.py
+        x = str(s)
 
-# pyenv
-.python-version
+    print(*[lista1[i] for i in range(len(lista1))], sep=' ')
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+if lis[0] < 0:
+    print(end="")
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+else:
+    print(end="")
+    for i in range(len(lista_brojeva)):
 
-# SageMath parsed files
-*.sage.py
+        provera(lista_brojeva[i])
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+    for i in range(len(nesrecni_brojevi)):
+        ispis(nesrecni_brojevi[i])
+        #print('')
 
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
+    print('SRECNI BROJEVI:', srecni_brojevi,end='')
