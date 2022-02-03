@@ -1,0 +1,20 @@
+Napisati program koji u listi pozitivnih celih brojeva pronalazi sve „srećne“ brojeve. Broj je
+„srećan“ ako se može dobiti vrednost 1 nakon uzastopne zamene broja sumom kvadrata
+njegovih cifara. Na primer, broj 13 je „srećan“ broj
+Broj je „nesrećan“ ako opisanim postupkom nikada ne dobija vrednost 1, odnosno ako se
+prilikom izračunavanja ponovo pojavi broj koji se već pojavio u sekvenci. Na primer, broj 4
+je „nesrećan“ broj Učitavanje elemenata liste i proveru da li je broj „srećan“
+ili „nesrećan“ realizovati kao zasebne funkcije koja treba da komuniciraju sa glavnim
+programom isključivo putem argumenata i povratnih vrednosti.
+
+
+Program treba da:
+
+
+1) Implementira funkciju koja učitava listu na osnovu zadatog ulaza.
+2) Proveri da li su svi elementi liste pozitivni celi brojevi i prekine izvršavanje programa
+ukoliko nisu.
+3) Implementira funkciju koja izračunava sumu kvadrata cifara zadatog broja.
+4) Najpre ispiše sekvence „nesrećnih“ brojeva u zasebnim redovima (uključujući i broj koji
+se ponavlja na kraju sekvence), a zatim i listu „srećnih“ brojeva prema formatu
+prikazanom u primerima.
